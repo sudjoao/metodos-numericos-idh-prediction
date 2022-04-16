@@ -1,9 +1,7 @@
 def get_g(index, x):
     if index == 1:
         return 1
-    if index == 2:
-        return x
-    return x**2
+    return x
 
 def takeResults():
     for i in matrizA:
@@ -32,7 +30,7 @@ def transformMatriz (matrizA, results):
   return matrizA
 
 def hdiCalculator(final, ano):
-  hdi = final[0] + final[1]*(ano) + final[2]*(ano**2)
+  hdi = final[0] + final[1]*(ano)
   return hdi
 
 years = [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019]
@@ -41,16 +39,16 @@ m = len(years)
 
 matrizA = []
 results = []
-for i in range(1, 4):
+for i in range(1, 3):
     tmp = []
-    for j in range(1,4):
+    for j in range(1,3):
         sum = 0
         for k in range(0, m):
             sum += get_g(i, years[k]) * get_g(j, years[k])
         tmp.append(sum)
     matrizA.append(tmp)
 
-for i in range (1,4):
+for i in range (1, 3):
     sum = 0
     for j in range(0, m):
         sum += hdis[j] * get_g(i, years[j])
